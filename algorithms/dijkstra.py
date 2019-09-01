@@ -1,5 +1,5 @@
 # Dijkstra's algorithm
-## \textbf{Note:} Replacing heapq with a priorityqueue from the \ms{queue}-package might be ncessary
+## \note Replacing heapq with a priorityqueue from the \ms{queue}-package might be necessary
 def dijkstra(a, b, nodes):
     import heapq
     visited = {}
