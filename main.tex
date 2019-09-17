@@ -57,6 +57,8 @@
 \subsection{Python}
 \begin{itemize}
 	\item Priority queue \arrow \ms{queue.PriorityQueue}
+	\item Python base switching \arrow \ms{int(x, base=b)}
+	\item Deque \arrow \ms{collections.deque}
 \end{itemize}
 \subsection{C++}
 \begin{itemize}
@@ -121,7 +123,7 @@ a_xb_y - a_yb_x \end{bmatrix}
 	\draw[->, >=latex] (0mm, 0mm) node[left] {A} -- (15mm, 10mm) node[above left] {B};
 	\draw[->, >=latex] (15mm, 10mm) -- (40mm, 20mm) node[above] {C};
 	\end{tikzpicture}
-\end{minipage}%
+\end{minipage}
 \begin{minipage}{0.25\linewidth}
 	\begin{align*}
 	\vec{AB} &= \begin{bmatrix} p \\ q \end{bmatrix} \\
@@ -179,6 +181,31 @@ A   &= \frac{1}{2}\sum_{i=1}^{n-1}(x_iy_{i+1}-x_{i+1}y_i)
 \begin{equation*}
 	d(ax+by+c=0, (x_0, y_0)) = \frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}
 \end{equation*}
+\subsection*{Number theory}
+$d(n)$ is het aantal positieve delers van een positief geheel getal $n$, met 1 en $n$ inbegrepen.
+\begin{align*}
+	d(1) + d(2) + \ldots + d(n) &= \lfloor \frac{n}{1} \rfloor + \lfloor \frac{n}{2} \rfloor + \ldots + \lfloor \frac{n}{n} \rfloor
+\end{align*}
+
+Aantal factoren van een priemgetal $a$ in $n!$ is:
+\begin{align*}
+	\lfloor \frac{n}{a} \rfloor + \rfloor \frac{n}{a^2} \rfloor + \ldots
+\end{align*}
+Kleine stelling van Fermat, $p$ priem en $a>0$:
+\begin{align*}
+	a^p \equiv a \mod p
+\end{align*}
+Als $a$ en $p$ copriem zijn:
+\begin{align*}
+	a^{p-1} \equiv 1 \mod p
+\end{align*}
+\subsection*{Series}
+Geometric series with $r$:
+\begin{align*}
+	a + ar^2 + \ldots + ar^{n-1} &= \sum^{n-1}_{k=0} ar^{k} = a\left(\frac{1-r^n}{1-r}\right) \\
+	\lim_{n\rightarrow \infty} S &= \frac{a}{1-r} \quad \forall |r| < 1
+\end{align*}
+
 \section{Algorithms}
 
 %PLACEHOLDER%
