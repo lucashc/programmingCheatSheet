@@ -1,3 +1,4 @@
+# Topological sort
 def topological_sort(graph):
     from collections import deque
     indeg = [0] * len(graph)
