@@ -1,5 +1,5 @@
 # Floyd-Warshall's algorithm
-## \note The object dist is an weighted adjacency matrix
+## \note The object dist is a weighted adjacency matrix
 def floyd_warshall(matrix):
     for i in range(len(matrix)):
         for j in range(len(matrix)):
