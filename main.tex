@@ -1,5 +1,5 @@
 \documentclass[a4paper, twocolumn]{article}
-\usepackage[landscape, a4paper, left=1cm, right=1cm, top=1cm, bottom=2cm]{geometry}
+\usepackage[landscape, a4paper, left=1cm, right=1cm, top=1cm, bottom=4cm]{geometry}
 \usepackage[parfill]{parskip}
 \usepackage{fancyhdr}
 \usepackage{tikz}
@@ -15,7 +15,7 @@
 
 % Team Name
 \newcommand{\teamname}{Crystal Math}
-
+\newcommand{\teammembers}{Gabriëlle Zwaneveld, Sven Holtrop and Lucas Crijns}
 % Useful commands
 \renewcommand{\vec}{\overrightarrow}
 \newcommand{\pageend}{\vfill\newpage}
@@ -24,6 +24,10 @@
 \newcommand{\point}[4]{\draw[fill] (#1,#2) circle (1pt) node[#4] {#3}}
 \newcommand{\note}{\textbf{Note: }}
 
+% Fix Header
+\setlength{\topmargin}{0cm}
+\setlength{\headsep}{0cm}
+\setlength{\columnsep}{1cm}
 % Syntax Highlighting
 \lstset{language=python}
 \input{highlighting.tex}
@@ -38,12 +42,18 @@
 				\fill [SpecialBlue] (0cm, 0cm) rectangle (\paperwidth, 1.5cm);
 			\end{tikzpicture}
 		};
+		\node[yshift=-2cm] at (current page.north west) {
+			\begin{tikzpicture}[remember picture, overlay]
+				\fill [SpecialBlue] (0cm, 0cm) rectangle (\paperwidth, 2cm);
+				\node at (\paperwidth - 2.5cm, 0.7cm) {\includegraphics[height=3cm]{logo.eps}};
+			\end{tikzpicture}
+		};
 	\end{tikzpicture}
 }
 \fancyhead{\mkfoot}
 \fancyfoot{}
 \fancyfoot[L]{\color{white} \large \textbf{\teamname} Cheatsheet}
-\fancyfoot[R]{\color{white} Gabriëlle Zwaneveld, Sven Holtrop en Lucas Crijns \hspace{1.3em} \large \textbf\thepage}
+\fancyfoot[R]{\color{white} \teammembers \hspace{1.3em} \large \textbf\thepage}
 \renewcommand{\headrulewidth}{0cm}
 \renewcommand{\headrulewidth}{0cm}
 
@@ -53,10 +63,23 @@
 
 \begin{document}
 
+% Title page
+\begin{titlepage}
+	\centering
+	~\\
+	\vspace{20px}
+	\resizebox{700px}{!}{\Huge Team Contest Reference}
+	\\ \vspace{40px}
+	\resizebox{400px}{!}{\Huge \textcolor{SpecialBlue}{\textbf{\teamname}}}
+	\\ \vspace{20px}
+	\resizebox{500px}{!}{\LARGE \teammembers}
+	\includegraphics[width=300px]{logo_rgb.eps}
+\end{titlepage}
+
 \section{Modules}
 \subsection{Python}
 \begin{itemize}
-	\item Priority queue \arrow \ms{queue.PriorityQueue}
+	\item Priority queue \arrow \ms{heapq}
 	\item Python base switching \arrow \ms{int(x, base=b)}
 	\item Deque \arrow \ms{collections.deque}
 \end{itemize}
@@ -113,7 +136,6 @@ $$\sqrt{(s-a)(s-b)(s-c)(s-d)-abcd cos^2\left(\frac{\alpha+\gamma}{2}\right)}$$
 16796\}
 \end{align*}
 \vspace{-1em}
-\newpage
 \subsection*{Fibonacci Numbers}\vspace*{-1em}
 \begin{align*}
 1,1,2,3,5,8,13,21,34,55,89, 144, 233, 377, 610, 987, 1597, 2584
@@ -241,6 +263,9 @@ Given a set of (k+1) data points $(x_0,y_0),(x_1,y_1), \ldots (x_k,y_k)$ where n
 L(x) &= \sum_{j=0}^k y_jl_j(x) \\
 l_j(x) &= \prod_{0 \leq m \leq k, m \neq j} \frac{x-x_m}{x_j-x_m} \\
 \end{align*}
+
+\subsection*{Graphs}
+For a connected planar graph, the number of vertices $V$, edges $E$ and planar faces $F$ obeys: $V-E+f=2$ (this includes the outer face).
 
 \section{Algorithms}
 
