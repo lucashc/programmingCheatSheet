@@ -22,13 +22,11 @@ for f in filelist:
             title = data.splitlines()[0][2:].strip()
             extra_info = "\n\\\\".join([i.strip()[3:] for i in data.splitlines()[1:] if i.startswith("##")])
             inclusion += r"""
-\begin{minipage}{\columnwidth}
 \subsection*{%TITLE%}
 %EXTRA%
 \begin{lstlisting}[language=%LANGUAGE%]
 %FILE%
 \end{lstlisting}
-\end{minipage}
 """.replace("%LANGUAGE%", get_lang(f)).replace("%FILE%", code).replace("%TITLE%", title).replace("%EXTRA%", extra_info)
 
 with open("main.tex") as infile:

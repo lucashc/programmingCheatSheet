@@ -79,22 +79,38 @@
 \text{oppervlakte bol}      &: 4 \pi r^2 \\
 \text{inhoud bol}           &: \frac{4}{3} \pi r^3 \\
 \text{oppervlakte cillinder}&: 2\pi rh + 2\pi r^2 \\
-\text{inhoud cilinder}      &: \pi r^2 h 
-\end{align*}    
-\vspace{-2em}
+\text{inhoud cilinder}      &: \pi r^2 h\\
+\end{align*}
+
+\subsection{Trapezion}
+oppvervlakte trapezium: $\frac{a+b}{2}h$\\
+Als de evenwijdige zijden $a,b$ verschillende lengtes hebben, dan is h:
+\begin{align*}
+h = \frac{\sqrt{(-a+b+c+d)(a-b+c+d)(a-b+c-d)(a-b-c+d)}}{2|b-a|}
+\end{align*}
+De lengtes van de diagonalen als $b>a$ de evenwijdige zijden zijn
+\begin{align*}
+p &= \sqrt{\frac{ab^2-a^2b-ac^2+bd^2}{b-a}}\\
+q &= \sqrt{\frac{ab^2-a^2b-ad^2+bc^2}{b-a}}
+\end{align*}
+
+\subsection{Oppervlakte formules}
+Formule van Heron:\\
+$$s = \frac{a+b+c}{2}$$
+$$\sqrt{s(s-a)(s-b)(s-c)}$$
+
+Bretschneider's formule:\\
+$$s = \frac{a+b+c+d}{2}$$
+$$\sqrt{(s-a)(s-b)(s-c)(s-d)-abcd cos^2\left(\frac{\alpha+\gamma}{2}\right)}$$
+
 \subsection*{More Formulas}
-\vspace{-1.5em}
 \begin{align*}
 \text{least common multiple} &: \text{lcm}(m, n) = \frac{|m \cdot
 	n|}{\text{gcd(m, n)}} \\
 \text{Catalan number} &: C_n = \frac{1}{n+1}{2n \choose n} =
 \frac{(2n)!}{(n+1)!n!} = \prod^n_{k=2}\frac{n+k}{k} \\
 \text{Catalan numbers} &: C = \{1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862,
-16796\} \\
-\text{Triangle numbers} &: T = \{1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78,
-91, 105, 120, 136\} \\
-\text{Triangle numbers} &: T_n = \sum_{k=1}^nk = \frac{n(n+1)}{2} = {n+1 \choose
-	2}
+16796\}
 \end{align*}
 \vspace{-1em}
 \newpage
@@ -110,13 +126,22 @@
 	\item The Fibonacci numbers in the composite-number (i.e. non-prime)
 	positions are also composite numbers.
 \end{itemize}
-\subsection*{Cross product}\vspace{-2.5em}
+\subsection{Vectoren}
+\textbf{Cross product}
 \begin{align*}
 a \times b &= \begin{bmatrix} a_x \\ a_b \\ a_z \end{bmatrix}
 \times \begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix} =
 \begin{bmatrix} a_yb_z - a_zb_y \\ a_zb_x - a_xb_z \\ 
 a_xb_y - a_yb_x \end{bmatrix}
 \end{align*}
+De projectie van een vector x op een andere vector y is:
+$$\frac{\langle x,y \rangle}{\langle y,y \rangle} y$$
+Het verschil van x en zijn projectie op y, staat loodrecht op y.\\
+Twee vectoren x en y zijn loodrecht dan en slechts dan als $\langle x,y \rangle = 0$.\\
+
+Projectie van een vector x op een vlak V. Bereken een normaal vector van V, bereken projectie p' van x op n. De projectie van x op V is dan x-p'.\\
+
+
 \subsection*{Links of rechts ombuigen}\vspace{-0.5em}
 \begin{minipage}{0.45\linewidth}
 	\begin{tikzpicture}
@@ -199,11 +224,22 @@ Als $a$ en $p$ copriem zijn:
 \begin{align*}
 	a^{p-1} \equiv 1 \mod p
 \end{align*}
-\subsection*{Series}
+\subsection*{Series and sums}
 Geometric series with $r$:
 \begin{align*}
 	a + ar^2 + \ldots + ar^{n-1} &= \sum^{n-1}_{k=0} ar^{k} = a\left(\frac{1-r^n}{1-r}\right) \\
 	\lim_{n\rightarrow \infty} S &= \frac{a}{1-r} \quad \forall |r| < 1
+\end{align*}
+\begin{align*}
+    \sum_{i=1}^n i &= \frac{n(n+1)}{2} \\
+    \sum_{i=1}^n i^2 &= \frac{n(n+1)(2n+1)}{6} \\
+    \sum_{i=1}^n i^3 &= \frac{n^2(n+1)^2}{4}
+\end{align*}
+\subsection{Lagrange polynomials}
+Given a set of (k+1) data points $(x_0,y_0),(x_1,y_1), \ldots (x_k,y_k)$ where no two $x_j$ are the same. Find a polynomial of degree $k$ that has all $(k+1)$ points
+\begin{align*}
+L(x) &= \sum_{j=0}^k y_jl_j(x) \\
+l_j(x) &= \prod_{0 \leq m \leq k, m \neq j} \frac{x-x_m}{x_j-x_m} \\
 \end{align*}
 
 \section{Algorithms}
