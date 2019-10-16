@@ -1,5 +1,5 @@
-#Newton-Raphson
-## \note Algorithm to find zeros
+# Newton-Raphson
+## \note Algorithm to find zeros of an arbitrary function
 def derivative(f, x, h):
       return (f(x+h) - f(x-h)) / (2.0*h)  # might want to return a small non-zero if ==0
 
@@ -17,4 +17,3 @@ def solve(f, x0, h):
     return nextX
 
 xFound = solve(quadratic, 5, 0.01)    # call the solver
-print "solution: x = ", xFound        # print the result

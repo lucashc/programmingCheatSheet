@@ -1,5 +1,5 @@
 # Kosaraju's algorithm
-## \note Algorithm that finds all stringly connected components
+## \note Algorithm that finds all strongly connected components
 from collections import defaultdict
 # This class represents a directed graph using adjacency list representation
 class Graph:

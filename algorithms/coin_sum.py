@@ -1,4 +1,5 @@
 # Coin sum
+## \note Expects a list with the coin values, and repetitions if there are more coins with this value.
 def recMC(coinValueList,change):
    minCoins = change
    if change in coinValueList:

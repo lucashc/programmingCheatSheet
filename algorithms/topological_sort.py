@@ -1,4 +1,5 @@
 # Topological sort
+## \note \ms{graph} is an adjacency matrix with directed edges
 def topological_sort(graph):
     from collections import deque
     indeg = [0] * len(graph)

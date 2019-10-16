@@ -1,5 +1,5 @@
 # Fenwick Tree
-## \note Efficiently calculate sums and update elements
+## \note Efficiently calculate sums and update elements. The sum is taken from $0$ up to index \ms{r}. Updates happen with deltas and not with setting.
 class FenwickSum:
     def __init__(self, items):
         self.items = [0 for _ in range(len(items))]

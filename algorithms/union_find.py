@@ -1,4 +1,5 @@
 # Union Find
+## \note Union find as used in Kruskal's minimum spanning tree.
 class UnionFind:
     
     def __init__(self, nodes):

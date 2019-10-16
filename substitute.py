@@ -1,12 +1,12 @@
 #!/bin/env python
 import sys
 from os import listdir
-from os.path import isfile, join, getsize
+from os.path import isfile, join, getsize, basename
 
 # Get files in directory
 algorithm_dir = sys.argv[1]
 filelist = [join(algorithm_dir, f) for f in listdir(algorithm_dir) if isfile(join(algorithm_dir, f))]
-filelist.sort(key=lambda x: getsize(x))
+filelist.sort(key=lambda x: basename(x))
 
 def get_lang(f):
     if f[-3:] == ".py": return "Python"

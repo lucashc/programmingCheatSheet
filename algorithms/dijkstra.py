@@ -1,5 +1,5 @@
 # Dijkstra's algorithm
-## \note Replacing heapq with a priorityqueue from the \ms{queue}-package might be necessary
+## \note \ms{nodes} is a list with node $i$ at index $i$ and then this node contains a list of tuples that indicate the length of the edge and whereto.
 def dijkstra(a, b, nodes):
     import heapq
     visited = {}
